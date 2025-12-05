@@ -1,0 +1,189 @@
+input,
+textarea {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.95);
+  color: #1a1a1a;
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  font-family: var(--font-main);  
+  outline: none;
+  transition: border 0.18s ease, box-shadow 0.18s ease, transform 0.1s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #6b6b70;
+  opacity: 1;
+  font-style: normal;
+  font-weight: 400;
+  font-family: var(--font-main);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(74, 242, 197, 0.2);
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 1);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+
+label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+button {
+  padding: 0.7rem 1.3rem;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: linear-gradient(135deg, #4af2c5, #2bdba9);
+  color: #020204;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, filter 0.2s ease;
+  box-shadow: 0 10px 30px rgba(1, 148, 101, 0.4);
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.4), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+button:hover::before {
+  opacity: 1;
+}
+
+button:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 4px 12px rgba(1, 148, 101, 0.3);
+}
+
+button.secondary {
+  background: rgba(15, 15, 25, 0.98);
+  color: var(--text-color);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+}
+
+.form-message {
+  margin-top: 0.7rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+.profiles-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.1rem;
+}
+
+.profile-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(12, 12, 20, 0.95), rgba(5, 5, 9, 0.96));
+  border-radius: 18px;
+  padding: 1rem 1rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.profile-card::before {
+  content: "";
+  position: absolute;
+  inset: -60%;
+  opacity: 0.05;
+  background: radial-gradient(circle at top, #4af2c5, transparent 55%);
+  transform: translateY(20%);
+  pointer-events: none;
+}
+
+.profile-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.85);
+  border-color: rgba(74, 242, 197, 0.3);
+}
+
+.profile-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.6rem;
+}
+
+.profile-name {
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.profile-role {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.badge-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.18rem 0.6rem;
+  border-radius: var(--radius-pill);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.badge-verified::before {
+  content: "●";
+  font-size: 0.7em;
+}
+
+
+.tag {
+  display: inline-block;
+  margin: 0.16rem;
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--radius-pill);
+  background: radial-gradient(circle at top left, #171727, #080810);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.skills-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.muted {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Profil Talent – Carte des Talents</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/pages/profile.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Carte des Talents</h1>
+    <nav class="app-nav">
+      <a href="index.html">Accueil</a>
+      <a href="profile.html">Profil Talent</a>
+      <a href="login.html">Espace responsable</a>
+    </nav>
+  </header>
+
+  <main class="app-main">
+    <div class="hero-shell">
+      <section class="intro hero-main">
+        <h2>Créer mon profil talent</h2>
+        <p>
+          Renseigne tes compétences, langues, projets et passions pour apparaître
+          dans la carte des talents et permettre aux autres de collaborer avec toi.
+        </p>
+        <p class="muted">
+          Ton email sera visible uniquement après une recherche avancée pour faciliter
+          la collaboration.
+        </p>
+      </section>
+
+      <aside class="hero-side">
+        <div class="hero-label">Info</div>
+        <p class="muted" style="margin-top: 0.5rem;">
+          Tous les champs marqués d'un astérisque (*) sont obligatoires.
+          Ton profil sera visible par tous les utilisateurs de la plateforme.
+        </p>
+      </aside>
+    </div>
+
+    <section class="profile-form-section card-shell">
+      <h2>Informations du profil</h2>
+      <form id="profile-form">
+        <input type="hidden" id="profile-id" />
+
+        <label>Nom complet *
+          <input type="text" id="profile-name" required placeholder="Saisir votre nom et prénom" />
+        </label>
+
+        <label>Email *
+          <input type="email" id="profile-email" required placeholder="exemple@example.com" />
+        </label>
+
+        <label>Rôle / Titre
+          <input type="text" id="profile-role" placeholder="Saisir votre titre ou role" />
+        </label>
+
+        <label>Compétences (séparées par des virgules)
+          <input type="text" id="profile-skills" placeholder="Saisir vos compétences" />
+        </label>
+
+        <label>Langues (séparées par des virgules)
+          <input type="text" id="profile-languages" placeholder="Français, Anglais, Arabe" />
+        </label>
+
+        <label>Projets réalisés *
+          <textarea id="profile-projects" required placeholder="Décris brièvement quelques projets que tu as réalisés (sites web, applications, designs, etc.)"></textarea>
+        </label>
+
+        <label>Passions / Centres d'intérêt
+          <textarea id="profile-passions" placeholder="Saisir vos passions"></textarea>
+        </label>
+
+        <button type="submit">Enregistrer le profil</button>
+      </form>
+      <p id="profile-message" class="form-message"></p>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>Nuit de l'Info 2025 – Carte des Talents</p>
+  </footer>
+
+  <script src="src/storage/localStorageService.js"></script>
+  <script src="src/models/profileModel.js"></script>
+  <script src="src/storage/profileRepository.js"></script>
+  <script src="src/utils/validators.js"></script>
+  <script src="src/utils/dom.js"></script>
+  <script src="src/views/profileFormView.js"></script>
+  <script src="src/controllers/profileController.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>

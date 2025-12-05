@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Carte des Talents</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/pages/home.css" />
+</head>
+<body>
+ <header class="app-header">
+  <h1>Carte des Talents</h1>
+  <nav class="app-nav">
+    <a href="index.html">Accueil</a>
+    <a href="profile.html">Créer un profil</a>
+    <a href="login.html">Espace responsable</a>
+  </nav>
+</header>
+
+
+ <main class="app-main">
+  <div class="hero-shell">
+    <section class="intro hero-main">
+      <h2>Carte des Talents</h2>
+      <p>
+        Visualise les compétences de ta communauté, trouve des collaborateurs
+        et mets en avant les talents vérifiés.
+      </p>
+      <p class="muted">
+        Nuit de l'Info 2025 · Données stockées localement dans ton navigateur.
+      </p>
+    </section>
+
+    <aside class="hero-side">
+      <div class="hero-metric" id="hero-count">0</div>
+      <div class="hero-label">Profils enregistrés</div>
+      <p class="muted" style="margin-top: 0.5rem;">
+        Ajoute ton profil et découvre instantanément le nuage de compétences.
+      </p>
+    </aside>
+  </div>
+
+  <section class="search-section">
+    <div class="card-shell">
+      <h3>Chercher un collaborateur</h3>
+      <form id="search-form">
+        <label>
+          Nom / mot-clé
+          <input
+            type="text"
+            id="search-name"
+            placeholder="Nom, rôle, mot-clé..."
+          />
+        </label>
+
+        <label>
+          Compétence
+          <input
+            type="text"
+            id="search-skill"
+            placeholder="Ex&nbsp;: React, Docker, Figma..."
+          />
+        </label>
+
+        <label>
+          Langue
+          <input
+            type="text"
+            id="search-language"
+            placeholder="Ex&nbsp;: Français, Anglais B2..."
+          />
+        </label>
+
+        <div class="checkbox-inline">
+          <input type="checkbox" id="search-verified" />
+          <span>Talents vérifiés uniquement</span>
+        </div>
+
+        <div class="actions">
+          <button type="submit">Rechercher</button>
+          <button type="button" class="secondary" id="search-reset">
+            Réinitialiser
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="cloud-section">
+    <div class="card-shell">
+      <h3>Nuage de compétences</h3>
+      <p class="muted">
+        La taille de chaque tag reflète le nombre de talents ayant cette
+        compétence.
+      </p>
+      <div id="skills-cloud" class="skills-cloud"></div>
+    </div>
+  </section>
+
+  <section class="results-section">
+    <div class="card-shell">
+      <h3>Profils disponibles</h3>
+      <div id="profiles-list" class="profiles-list"></div>
+    </div>
+  </section>
+</main>
+
+
+  <footer class="app-footer">
+    <p>Nuit de l'Info 2025 - Carte des Talents</p>
+  </footer>
+
+  <script src="src/storage/localStorageService.js"></script>
+  <script src="src/models/profileModel.js"></script>
+  <script src="src/storage/profileRepository.js"></script>
+  <script src="src/utils/dom.js"></script>
+  <script src="src/views/homeView.js"></script>
+  <script src="src/controllers/homeController.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Espace responsable – Carte des Talents</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/pages/login.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Carte des Talents</h1>
+    <nav class="app-nav">
+      <a href="index.html">Accueil</a>
+      <a href="profile.html">Profil Talent</a>
+      <a href="login.html">Espace responsable</a>
+    </nav>
+  </header>
+
+  <main class="app-main">
+    <div class="auth-container">
+
+      <section class="auth-card card-shell" id="login-section">
+        <h2>Connexion responsable</h2>
+        <p class="muted">Connecte-toi pour accéder à l'espace de validation des badges.</p>
+        
+        <form id="login-form">
+          <label>Email
+            <input type="email" id="login-email" required placeholder="responsable@example.com" />
+          </label>
+
+          <label>Mot de passe
+            <input type="password" id="login-password" required placeholder="••••••••" />
+          </label>
+
+          <button type="submit">Se connecter</button>
+        </form>
+        <p id="login-message" class="form-message"></p>
+
+        <p class="switch-auth">
+          Pas encore de compte ? 
+          <a href="#" id="show-register">Créer un compte responsable</a>
+        </p>
+      </section>
+
+
+      <section class="auth-card card-shell" id="register-section" style="display: none;">
+        <h2>Créer un compte responsable</h2>
+        <p class="muted">Inscris-toi pour devenir responsable et valider les talents.</p>
+        
+        <form id="register-form">
+          <label>Prénom
+            <input type="text" id="register-firstname" required placeholder="Jean" />
+          </label>
+
+          <label>Nom
+            <input type="text" id="register-lastname" required placeholder="Dupont" />
+          </label>
+
+          <label>Email
+            <input type="email" id="register-email" required placeholder="responsable@example.com" />
+          </label>
+
+          <label>Mot de passe
+            <input type="password" id="register-password" required placeholder="••••••••" />
+          </label>
+
+          <button type="submit">Créer le compte</button>
+        </form>
+        <p id="register-message" class="form-message"></p>
+
+        <p class="switch-auth">
+          Déjà un compte ? 
+          <a href="#" id="show-login">Se connecter</a>
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <p>Nuit de l'Info 2025 – Carte des Talents</p>
+  </footer>
+
+  <script src="src/storage/localStorageService.js"></script>
+  <script src="src/models/profileModel.js"></script>
+  <script src="src/storage/adminRepository.js"></script>
+  <script src="src/utils/validators.js"></script>
+  <script src="src/utils/dom.js"></script>
+  <script src="src/controllers/authController.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>

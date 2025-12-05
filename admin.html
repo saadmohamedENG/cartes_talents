@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Espace responsable – Carte des Talents</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/pages/admin.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Carte des Talents</h1>
+    <nav class="app-nav">
+      <a href="index.html">Accueil</a>
+      <a href="profile.html">Profil Talent</a>
+      <a href="login.html">Espace responsable</a>
+      <a href="#" id="logout-btn" style="display: none;">Déconnexion</a>
+    </nav>
+  </header>
+
+  <main class="app-main">
+    <div class="hero-shell">
+      <section class="intro hero-main">
+        <h2>Espace responsable</h2>
+        <p>
+          Valide les profils et attribue le badge <strong>Talent Verified</strong>
+          aux talents qui ont été vérifiés.
+        </p>
+        <p class="muted">
+          Cette vue affiche tous les profils enregistrés dans le navigateur.
+          Tu peux consulter leurs projets réalisés pour évaluer leur niveau.
+        </p>
+      </section>
+
+      <aside class="hero-side">
+        <div class="hero-label">Bienvenue</div>
+        <p id="admin-name" style="margin-top: 0.5rem; font-weight: 600; color: var(--accent);"></p>
+        <p class="muted" style="margin-top: 0.5rem;">
+          Utilise ce panneau pour préparer une sélection de talents à mettre
+          en avant dans ta démo de la Nuit de l'Info.
+        </p>
+      </aside>
+    </div>
+
+    <section class="admin-section card-shell">
+      <h2>Profils à valider</h2>
+      <p class="muted">
+        Consulte les projets réalisés par chaque talent pour évaluer leur niveau.
+        Clique sur <strong>Valider</strong> pour attribuer le badge ou sur
+        <strong>Retirer le badge</strong> pour enlever la validation.
+      </p>
+      <div id="admin-profiles-list" class="profiles-list"></div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>Nuit de l'Info 2025 – Carte des Talents</p>
+  </footer>
+
+  <script src="src/storage/localStorageService.js"></script>
+  <script src="src/models/profileModel.js"></script>
+  <script src="src/storage/profileRepository.js"></script>
+  <script src="src/storage/adminRepository.js"></script>
+  <script src="src/utils/dom.js"></script>
+  <script src="src/views/adminView.js"></script>
+  <script src="src/controllers/adminController.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>
